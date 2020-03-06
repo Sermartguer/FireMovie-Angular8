@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from "@angular/core";
+import Swiper from "swiper";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
+  swiper: Swiper;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngAfterViewInit() {
+    this.swiper = new Swiper(".swiper-container");
   }
-
+  ngOnInit() {}
 }
