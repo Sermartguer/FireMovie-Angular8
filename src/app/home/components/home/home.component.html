@@ -1,22 +1,12 @@
 <div style="position: relative;">
-  <div class="swiper-container">
-    <!-- Additional required wrapper -->
+  <!-- <div class="swiper-container">
     <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide" style="position: relative;">
-        <app-slide></app-slide>
-      </div>
-
-      <div class="swiper-slide" style="position: relative;">
-        <img
-          class="imgSwiper"
-          src="https://image.tmdb.org/t/p/original/qonBhlm0UjuKX2sH7e73pnG0454.jpg"
-          alt="imagen del banner"
-          style="position: absolute;"
-        />
-        <div class="imgSwiper shadowImage">
-          asdaodsj
-        </div>
+      <div
+        class="swiper-slide"
+        style="position: relative;"
+        *ngFor="let movie of movies"
+      >
+        <app-slide [movie]="movie"></app-slide>
       </div>
       <div class="swiper-slide" style="position: relative;">
         <img
@@ -26,9 +16,6 @@
         />
       </div>
     </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+  </div> -->
   <app-listview></app-listview>
 </div>

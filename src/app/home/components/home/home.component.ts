@@ -1,6 +1,10 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
 import Swiper from "swiper";
 
+import { MoviesService } from "../../../core/services/movies.service";
+
+import { Movie } from "../../../core/models/movie.model";
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -8,22 +12,25 @@ import Swiper from "swiper";
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   swiper: Swiper;
-  constructor() {}
+  movies: Movie[] = [];
+
+  constructor(private moviesService: MoviesService) {}
 
   ngAfterViewInit() {
-    this.swiper = new Swiper(".swiper-container", {
-      loop: true,
-      slidesPerView: 2,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar"
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+    /*this.moviesService.getNowPlaying().subscribe(movies => {
+      for (const d of movies as any) {
+        this.movies.push({
+          id: d.id,
+          title: d.title,
+          backdrop: d.backdrop_path,
+          poster_path: d.poster_path,
+          overview: d.overview,
+          vote: d.vote_average
+        });
       }
-    });
+    });*/
   }
-  ngOnInit() {}
+  ngOnInit() {
+    //this.swiper = new Swiper(".swiper-container", {});
+  }
 }

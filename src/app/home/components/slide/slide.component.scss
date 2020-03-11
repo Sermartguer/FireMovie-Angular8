@@ -11,3 +11,10 @@
   color: white;
   align-items: flex-end;
 }
+
+.fifty-chars {
+  width: 75ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
